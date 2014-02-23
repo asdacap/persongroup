@@ -1,5 +1,14 @@
 <h1>People Index</h1>
 
+<div class="row">
+    <div class="col-md-3">
+        <%= form_tag people_path, method: "get" do %>
+        <%= text_field_tag(:search, params[:search],class: 'form-control') %>
+        <% end %>
+    </div>
+</div>
+<br />
+
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
