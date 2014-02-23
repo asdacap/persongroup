@@ -1,0 +1,27 @@
+<h1>People Index</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @people.each do |p| %>
+        <tr>
+            <td><%=p.name%></td>
+            <td><%=p.address%></td>
+            <td><%=p.phone%></td>
+            <td>
+                <a class="btn btn-default" href="<%= url_for(p) %>"><i class="glyphicon glyphicon-ok"></i></a>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<a class="btn btn-primary" href="<%=new_person_path%>">New</a>
+
