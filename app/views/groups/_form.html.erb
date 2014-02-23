@@ -1,0 +1,27 @@
+<%= form_for(@group) do |f| %>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <%= f.label :name, class: 'form-label col-md-4'   %>
+        <div class="col-md-8">
+            <% @group.errors[:name].each { |s| %>
+            <%= s %><br />
+            <% } %>
+            <%= f.text_field :name, class: 'form-control' %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :description, class: 'form-label col-md-4'   %>
+        <div class="col-md-8">
+            <% @group.errors[:description].each { |s| %>
+            <%= s %><br />
+            <% } %>
+            <%= f.text_field :description , class: 'form-control'%>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-8"><%= f.submit class: 'btn btn-primary' %></div>
+    </div>
+</div>
+
+<% end %>

@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<dl>
+<dt>Name:</dt>
+<dd><%=@group.name%></dd>
+<dd><%=@group.description%></dd>
+<dt>Description:</dt>
+</dl>
+
+<%= link_to 'Edit', edit_group_path(@group), class: 'btn btn-default' %> 

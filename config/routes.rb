@@ -1,4 +1,6 @@
 Persongroup::Application.routes.draw do
+  resources :groups
+
   resources :people
   root 'people#index'
 
