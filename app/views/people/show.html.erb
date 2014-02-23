@@ -8,6 +8,14 @@
     <dd><%=@person.address%></dd>
     <dt>Phone:</dt>
     <dd><%=@person.phone%></dd>
+    <dt>Group:</dt>
+    <dd>
+        <% if(@person.group.nil?) %>
+        No group selected
+        <% else %>
+        <%= link_to @person.group.name, group_path(@person.group) %>
+        <% end %>
+    </dd>
 </dl>
 
     <a class="btn btn-default" href="<%=edit_person_path(@person)%>">Edit</a> <a class="btn btn-default" href="<%=person_path(@person)%>" data-method="DELETE" data-confirm="Are you sure?">Delete</a>

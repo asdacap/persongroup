@@ -3,8 +3,36 @@
 <dl>
 <dt>Name:</dt>
 <dd><%=@group.name%></dd>
-<dd><%=@group.description%></dd>
 <dt>Description:</dt>
+<dd><%=@group.description%></dd>
+<dt>People:</dt>
+<dd>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @group.people.each do |p| %>
+        <tr>
+            <td><%=p.name%></td>
+            <td><%=p.address%></td>
+            <td><%=p.phone%></td>
+            <td>
+                <a class="btn btn-default" href="<%= url_for(p) %>"><i class="glyphicon glyphicon-ok"></i></a>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+</dd>
 </dl>
 
 <%= link_to 'Edit', edit_group_path(@group), class: 'btn btn-default' %> 
+<%= link_to 'Delete', group_path(@group), method:'DELETE' , confirm: 'Are you sure?' , class: 'btn btn-danger' %> 
