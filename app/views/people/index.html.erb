@@ -15,7 +15,7 @@
             <th>Name</th>
             <th>Address</th>
             <th>Phone</th>
-            <th></th>
+            <th style="width:10%;"></th>
         </tr>
     </thead>
     <tbody>
@@ -24,8 +24,8 @@
             <td><%=p.name%></td>
             <td><%=p.address%></td>
             <td><%=p.phone%></td>
-            <td>
-                <a class="btn btn-default" href="<%= url_for(p) %>"><i class="glyphicon glyphicon-ok"></i></a>
+            <td class="text-center">
+                <a class="btn btn-default" href="<%= url_for(p) %>">View</a>
             </td>
         </tr>
         <% end %>
