@@ -8,6 +8,8 @@ class PeopleController < ApplicationController
             search='%'+search+'%'
             @people=Person.where("name LIKE ? or phone LIKE ? or address LIKE ? ",search,search,search)
         end
+
+        @people=@people.page(params[:page]).per(3)
     end
 
     def create

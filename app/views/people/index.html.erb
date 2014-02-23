@@ -32,5 +32,6 @@
     </tbody>
 </table>
 
-<a class="btn btn-primary" href="<%=new_person_path%>">New</a>
+<%= paginate @people %>
+<a class="btn btn-primary pull-right" href="<%=new_person_path%>">New</a>
 
