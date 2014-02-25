@@ -3,7 +3,7 @@ class PeopleController < ApplicationController
     
     def index
         @people=Person.all
-        if(!params[:search].empty?) 
+        if(params.key?(:search) and !params[:search].empty?) 
             search=params[:search]
             search='%'+search+'%'
             @people=Person.where("name LIKE ? or phone LIKE ? or address LIKE ? ",search,search,search)
